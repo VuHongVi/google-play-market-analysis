@@ -23,6 +23,21 @@ Google Play scrape of **9,659 apps** (snapshot 2018-08-08) and
 - **Data catch found on the way:** **775 of 1,720 games (45%) are filed under FAMILY, not GAME.**
   An analysis that filters on `Category == "GAME"` silently drops most Casual, Puzzle, Simulation and Role Playing games.
 
+## Power BI report
+
+A five-page Power BI report ([`powerbi/GooglePlay.pbip`](powerbi/GooglePlay.pbip), PDF:
+[`reports/GooglePlay_PowerBI_report.pdf`](reports/GooglePlay_PowerBI_report.pdf)): recommendation first, then the
+two market maps, the drivers of a hit (with slicers to switch to games only or one category - hit rates recompute live
+in DAX from the 9,659 app rows), and sentiment plus limitations. A reconciliation query
+([`powerbi/tools/reconciliation_query.dax`](powerbi/tools/reconciliation_query.dax)) checks the model against
+`results/metrics.json` - 23/23 checks pass.
+
+![Power BI - Overview](figures/powerbi_01_overview.png)
+
+| | |
+|---|---|
+| ![Game genres](figures/powerbi_03_game_genres.png) | ![What makes a hit](figures/powerbi_04_what_makes_a_hit.png) |
+
 ## Data and cleaning
 
 | Step | Result |
@@ -153,6 +168,11 @@ $env:KAGGLE_API_TOKEN = "<your token>"   # or ~/.kaggle/kaggle.json
 kaggle datasets download -d lava18/google-play-store-apps -p data/raw --unzip
 python -m gplay       # writes results/, figures/, README.md
 pytest -q
+# Power BI (optional)
+python -m gplay.powerbi_export   # writes powerbi/data/*.csv and the reconciliation query
+python powerbi/tools/build_model.py      # TMDL model (only needed after changing tables/measures)
+node powerbi/tools/build_report.js       # PBIR pages from the approved spec in _brief/report-spec.md
+# open powerbi/GooglePlay.pbip in Power BI Desktop, set the CsvFolder parameter to this repo's powerbi/data folder (with a trailing backslash), then Refresh
 ```
 
 ## Repo layout
@@ -162,4 +182,7 @@ src/gplay/analysis.py   cleaning, game definition, segment scoring, drivers, sen
 src/gplay/figures.py    the charts in figures/
 src/gplay/report.py     renders this README from results/metrics.json
 tests/                  unit tests on parsing, scoring and the data contract
+src/gplay/powerbi_export.py  CSV tables + reconciliation query for the Power BI model
+powerbi/                GooglePlay.pbip: TMDL model, PBIR report, generators (tools/)
+_brief/report-spec.md   approved page-by-page spec the report is generated from
 ```

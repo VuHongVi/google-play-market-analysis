@@ -1,0 +1,23 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["fact_apps", "fact_category_scores", "fact_category_sentiment", "fact_genre_scores", "kpi_metrics", "_Measures", "CsvFolder"]
+
+annotation PBI_ProTooling = ["MCP-PBIModeling","DevMode"]
+
+ref table fact_apps
+ref table fact_category_scores
+ref table fact_category_sentiment
+ref table fact_genre_scores
+ref table kpi_metrics
+ref table _Measures
+
+ref cultureInfo en-US
+

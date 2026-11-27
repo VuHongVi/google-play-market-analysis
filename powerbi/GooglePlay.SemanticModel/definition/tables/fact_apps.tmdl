@@ -1,0 +1,147 @@
+table fact_apps
+	lineageTag: 6496be84-5962-56b0-8f45-4c6732167e12
+
+	column app
+		dataType: string
+		lineageTag: 333a83e4-4bcf-536d-9b20-ff14a384746b
+		summarizeBy: none
+		sourceColumn: app
+
+	column category
+		dataType: string
+		lineageTag: e5c390b9-6521-597c-9f82-3467eef5c539
+		summarizeBy: none
+		sourceColumn: category
+
+	column category_label
+		dataType: string
+		lineageTag: 246559ba-99a7-55c8-a4a5-b409f6b13927
+		summarizeBy: none
+		sourceColumn: category_label
+
+	column primary_genre
+		dataType: string
+		lineageTag: d1a4be0f-d713-50c2-bbf4-ee19327f4694
+		summarizeBy: none
+		sourceColumn: primary_genre
+
+	column is_game
+		dataType: int64
+		formatString: 0
+		lineageTag: d6291d1b-219c-5e30-bba2-16c3a7704c79
+		summarizeBy: none
+		sourceColumn: is_game
+
+	column app_type
+		dataType: string
+		lineageTag: d668b43b-0ea5-5a42-8364-fd73605f4e45
+		summarizeBy: none
+		sourceColumn: app_type
+
+	column game_filed_under
+		dataType: string
+		lineageTag: c2d7a4c7-c2dc-5e33-b255-e0542f6469a2
+		summarizeBy: none
+		sourceColumn: game_filed_under
+
+	column rating
+		dataType: double
+		formatString: 0.0
+		lineageTag: d5ca3d7a-5281-5a8b-9628-b27cc5c07d8a
+		summarizeBy: none
+		sourceColumn: rating
+
+	column reviews
+		dataType: int64
+		formatString: #,0
+		lineageTag: 40301d04-0a07-5983-b64c-4849cea04d97
+		summarizeBy: none
+		sourceColumn: reviews
+
+	column installs
+		dataType: int64
+		formatString: #,0
+		lineageTag: de4d1927-7b62-5aa5-a1c5-f5756490510f
+		summarizeBy: none
+		sourceColumn: installs
+
+	column is_hit
+		dataType: int64
+		formatString: 0
+		lineageTag: 3357a5e9-788a-5747-b126-da57a72908e8
+		summarizeBy: none
+		sourceColumn: is_hit
+
+	column price
+		dataType: double
+		formatString: $0.00
+		lineageTag: 922fb260-b9f5-5533-8505-004b349befd7
+		summarizeBy: none
+		sourceColumn: price
+
+	column is_paid
+		dataType: int64
+		formatString: 0
+		lineageTag: 3bbf8fd9-c2da-5c66-a16e-715ddef5f79c
+		summarizeBy: none
+		sourceColumn: is_paid
+
+	column pricing
+		dataType: string
+		lineageTag: de2fda0d-1a71-564a-90da-15247d8c9bba
+		summarizeBy: none
+		sourceColumn: pricing
+
+	column size_mb
+		dataType: double
+		formatString: 0.0
+		lineageTag: 1b2891e9-cdf1-507e-a7e7-f3c6e2e884ab
+		summarizeBy: none
+		sourceColumn: size_mb
+
+	column rating_band
+		dataType: string
+		lineageTag: de15d494-a6f2-5d8c-894f-378c4820484a
+		summarizeBy: none
+		sourceColumn: rating_band
+		sortByColumn: rating_band_order
+
+	column rating_band_order
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: e9cbb468-522f-564f-98ce-a672b6a1e1dd
+		summarizeBy: none
+		sourceColumn: rating_band_order
+
+	column update_age
+		dataType: string
+		lineageTag: 673abb6a-afe9-5c8c-85c1-2c9793bcd842
+		summarizeBy: none
+		sourceColumn: update_age
+		sortByColumn: update_age_order
+
+	column update_age_order
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: d613bc32-9818-5fb9-b949-4b55cc699541
+		summarizeBy: none
+		sourceColumn: update_age_order
+
+	column last_updated
+		dataType: dateTime
+		lineageTag: 48405231-585f-5ffb-a692-5ab9f7ef40ca
+		summarizeBy: none
+		sourceColumn: last_updated
+
+	partition fact_apps = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(CsvFolder & "fact_apps.csv"), [Delimiter=",", Columns=20, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"app", type text}, {"category", type text}, {"category_label", type text}, {"primary_genre", type text}, {"is_game", Int64.Type}, {"app_type", type text}, {"game_filed_under", type text}, {"rating", type number}, {"reviews", Int64.Type}, {"installs", Int64.Type}, {"is_hit", Int64.Type}, {"price", type number}, {"is_paid", Int64.Type}, {"pricing", type text}, {"size_mb", type number}, {"rating_band", type text}, {"rating_band_order", Int64.Type}, {"update_age", type text}, {"update_age_order", Int64.Type}, {"last_updated", type date}}, "en-US")
+				in
+				    Typed
+

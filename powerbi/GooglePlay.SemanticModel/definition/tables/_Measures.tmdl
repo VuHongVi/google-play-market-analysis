@@ -1,0 +1,75 @@
+/// Home table for every report measure.
+table _Measures
+	lineageTag: a4412bf7-40f0-53d8-9e2c-030f6f4dfa3d
+
+	/// Unique apps after cleaning.
+	measure Apps = COUNTROWS ( fact_apps )
+		formatString: #,0
+		displayFolder: Market
+		lineageTag: 4f39e6c9-acf6-5c66-be5b-0ea89e0d046b
+
+	/// GAME apps + FAMILY apps with a game genre.
+	measure Games = CALCULATE ( [Apps], fact_apps[is_game] = 1 )
+		formatString: #,0
+		displayFolder: Market
+		lineageTag: 5f4137fc-6097-5367-8861-1aa4dd4fd638
+
+	measure 'Games Filed Under Family' = CALCULATE ( [Apps], fact_apps[game_filed_under] = "Filed under FAMILY" )
+		formatString: #,0
+		displayFolder: Market
+		lineageTag: 21b4201f-3890-5aaa-bb0d-0e04799ee997
+
+	/// Share of games a Category = GAME filter would miss.
+	measure 'Games Filed Under Family %' = DIVIDE ( [Games Filed Under Family], [Games] )
+		formatString: 0%
+		displayFolder: Market
+		lineageTag: 9518eeb6-3670-5e77-9d34-9260d7ae1997
+
+	/// Share of apps with 1M+ installs (lower bound of the bucket).
+	measure 'Hit Rate' = DIVIDE ( SUM ( fact_apps[is_hit] ), [Apps] )
+		formatString: 0.0%
+		displayFolder: Hits
+		lineageTag: 6b2fc994-a63e-533a-bd3e-4ac71e6d2eed
+
+	measure 'Hit Rate Games' = CALCULATE ( [Hit Rate], fact_apps[is_game] = 1 )
+		formatString: 0.0%
+		displayFolder: Hits
+		lineageTag: 3e6bec72-f6a4-561a-854a-a2da6b4e6d28
+
+	measure 'Free Hit Rate' = CALCULATE ( [Hit Rate], fact_apps[pricing] = "Free" )
+		formatString: 0.0%
+		displayFolder: Hits
+		lineageTag: 5286486c-98b2-5911-bfa3-a03c63655866
+
+	measure 'Paid Hit Rate' = CALCULATE ( [Hit Rate], fact_apps[pricing] = "Paid" )
+		formatString: 0.0%
+		displayFolder: Hits
+		lineageTag: 0c6ccee5-f09d-5f21-bad6-d699e22a764f
+
+	measure 'Median Rating' = MEDIAN ( fact_apps[rating] )
+		formatString: 0.0
+		displayFolder: Market
+		lineageTag: 39be93c2-ff82-5b8f-b218-07178b9735d8
+
+	/// Median share of an app's labelled reviews that are negative.
+	measure 'Negative Review Share' = SUM ( fact_category_sentiment[neg_share] )
+		formatString: 0%
+		displayFolder: Sentiment
+		lineageTag: fab43172-633d-5d74-ad83-072ac50438bb
+
+	column Value
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: c54a012a-778f-5c97-904e-4b07f78876e4
+		summarizeBy: none
+		sourceColumn: Value
+
+	partition _Measures = m
+		mode: import
+		source =
+				let
+				    Source = #table(type table [Value = Int64.Type], {})
+				in
+				    Source
+

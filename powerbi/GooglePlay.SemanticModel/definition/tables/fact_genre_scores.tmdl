@@ -1,0 +1,96 @@
+table fact_genre_scores
+	lineageTag: 39f3b249-e8a2-5814-9749-61d6cb5f65c3
+
+	column opportunity_rank
+		dataType: int64
+		formatString: 0
+		lineageTag: 47ec97de-98a8-5c23-a1e4-e7d8b21bf287
+		summarizeBy: none
+		sourceColumn: opportunity_rank
+
+	column primary_genre
+		dataType: string
+		lineageTag: 91ab5927-3c5b-5819-9f15-5e0815275462
+		summarizeBy: none
+		sourceColumn: primary_genre
+
+	column apps
+		dataType: int64
+		formatString: #,0
+		lineageTag: bcf7b2f3-79cb-5b05-b95f-d7d69c1bbcb6
+		summarizeBy: none
+		sourceColumn: apps
+
+	column hit_rate
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 8d1124ac-4f0e-58ad-a470-016564e42ea4
+		summarizeBy: none
+		sourceColumn: hit_rate
+
+	column hit_rate_low
+		dataType: double
+		formatString: 0.0%
+		lineageTag: c16405dd-e7c1-5641-ac0a-8fccc582db28
+		summarizeBy: none
+		sourceColumn: hit_rate_low
+
+	column hit_rate_high
+		dataType: double
+		formatString: 0.0%
+		lineageTag: e432a4b7-888a-5dec-af2d-45c04b1f28e5
+		summarizeBy: none
+		sourceColumn: hit_rate_high
+
+	column median_installs
+		dataType: int64
+		formatString: #,0
+		lineageTag: 4ef59f10-520d-55f0-96ec-d790aea04105
+		summarizeBy: none
+		sourceColumn: median_installs
+
+	column top_decile_share
+		dataType: double
+		formatString: 0.0%
+		lineageTag: bc1e7261-0990-59a9-a907-ede260b2f5a0
+		summarizeBy: none
+		sourceColumn: top_decile_share
+
+	column median_rating
+		dataType: double
+		formatString: 0.0
+		lineageTag: cfa11458-9343-5918-bf37-48aaf131cce8
+		summarizeBy: none
+		sourceColumn: median_rating
+
+	column paid_share
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 4965876e-1f96-5e30-bc69-56cd0a1bb15e
+		summarizeBy: none
+		sourceColumn: paid_share
+
+	column opportunity
+		dataType: double
+		formatString: 0.00
+		lineageTag: 4540c4dc-2d74-56ef-b6af-60fd2968dea4
+		summarizeBy: none
+		sourceColumn: opportunity
+
+	column is_recommended
+		dataType: int64
+		formatString: 0
+		lineageTag: 50c96ae9-2ab5-5575-8ea2-aea787d0703c
+		summarizeBy: none
+		sourceColumn: is_recommended
+
+	partition fact_genre_scores = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(CsvFolder & "fact_genre_scores.csv"), [Delimiter=",", Columns=12, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"opportunity_rank", Int64.Type}, {"primary_genre", type text}, {"apps", Int64.Type}, {"hit_rate", type number}, {"hit_rate_low", type number}, {"hit_rate_high", type number}, {"median_installs", Int64.Type}, {"top_decile_share", type number}, {"median_rating", type number}, {"paid_share", type number}, {"opportunity", type number}, {"is_recommended", Int64.Type}}, "en-US")
+				in
+				    Typed
+
