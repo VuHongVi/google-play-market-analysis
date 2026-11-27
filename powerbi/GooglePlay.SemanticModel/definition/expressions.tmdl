@@ -1,0 +1,6 @@
+/// Local folder with the CSV tables written by the Python pipeline. Change this one value if the repo moves.
+expression CsvFolder = "D:\Vi\DA_Game\google-play-market-analysis\powerbi\data\" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: f10840c5-0d35-5e2d-98d3-77eed890d1cd
+
+	annotation PBI_ResultType = Text
+

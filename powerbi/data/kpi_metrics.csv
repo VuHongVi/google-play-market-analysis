@@ -1,0 +1,6 @@
+metric,value
+raw_rows,10841
+duplicate_rows_dropped,1181
+labelled_reviews,37432
+sentiment_rating_spearman,-0.2287583011
+rating_installs_spearman,0.02718449136

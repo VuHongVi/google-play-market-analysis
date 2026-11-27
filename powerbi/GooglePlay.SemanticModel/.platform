@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "GooglePlay"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "063f3aed-2ea8-5ee9-85be-f09a611fe8ea"
+  }
+}

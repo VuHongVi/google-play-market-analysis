@@ -1,0 +1,46 @@
+table fact_category_sentiment
+	lineageTag: 9b134067-8e50-5cd0-ab0b-91bfc301244d
+
+	column category
+		dataType: string
+		lineageTag: 083d26eb-f653-54e1-9b0c-ba63794e56a9
+		summarizeBy: none
+		sourceColumn: category
+
+	column category_label
+		dataType: string
+		lineageTag: 876b2990-86f5-587d-825b-b57d9ef0dc85
+		summarizeBy: none
+		sourceColumn: category_label
+
+	column apps
+		dataType: int64
+		formatString: #,0
+		lineageTag: c5f0d843-a05c-59f2-ae56-5822c9f2dbed
+		summarizeBy: none
+		sourceColumn: apps
+
+	column neg_share
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 41991454-105d-5825-8d1b-a3efd9b7bb46
+		summarizeBy: none
+		sourceColumn: neg_share
+
+	column is_game
+		dataType: int64
+		formatString: 0
+		lineageTag: dc366bb1-51ea-591a-ae32-a413a19d7a96
+		summarizeBy: none
+		sourceColumn: is_game
+
+	partition fact_category_sentiment = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(CsvFolder & "fact_category_sentiment.csv"), [Delimiter=",", Columns=5, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"category", type text}, {"category_label", type text}, {"apps", Int64.Type}, {"neg_share", type number}, {"is_game", Int64.Type}}, "en-US")
+				in
+				    Typed
+

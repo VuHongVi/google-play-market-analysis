@@ -1,0 +1,102 @@
+table fact_category_scores
+	lineageTag: bd545bfb-e54f-5ace-b611-391a6ac3200d
+
+	column opportunity_rank
+		dataType: int64
+		formatString: 0
+		lineageTag: 0b78cdbe-161f-55a8-8546-11a80bb45a58
+		summarizeBy: none
+		sourceColumn: opportunity_rank
+
+	column category
+		dataType: string
+		lineageTag: 40c377ca-32b0-5acd-83cb-40c225523336
+		summarizeBy: none
+		sourceColumn: category
+
+	column category_label
+		dataType: string
+		lineageTag: b30f8923-20ff-5885-af1f-bc37c2ab3d44
+		summarizeBy: none
+		sourceColumn: category_label
+
+	column apps
+		dataType: int64
+		formatString: #,0
+		lineageTag: 7292686c-730f-5e16-a044-8a7195d68df5
+		summarizeBy: none
+		sourceColumn: apps
+
+	column hit_rate
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 98a371a2-b44c-5fc5-9d82-b9f88c3fb289
+		summarizeBy: none
+		sourceColumn: hit_rate
+
+	column hit_rate_low
+		dataType: double
+		formatString: 0.0%
+		lineageTag: d4a08818-ac94-552d-9fc0-44a248fdca66
+		summarizeBy: none
+		sourceColumn: hit_rate_low
+
+	column hit_rate_high
+		dataType: double
+		formatString: 0.0%
+		lineageTag: e0af1cf5-6ddb-5583-8df1-b5db9251e0f4
+		summarizeBy: none
+		sourceColumn: hit_rate_high
+
+	column median_installs
+		dataType: int64
+		formatString: #,0
+		lineageTag: a28d6a48-7509-52cf-ae94-711cce6a892f
+		summarizeBy: none
+		sourceColumn: median_installs
+
+	column top_decile_share
+		dataType: double
+		formatString: 0.0%
+		lineageTag: d0401e93-0f6d-5bac-86d6-ff1a2bf68ef2
+		summarizeBy: none
+		sourceColumn: top_decile_share
+
+	column median_rating
+		dataType: double
+		formatString: 0.0
+		lineageTag: f5695514-2494-5ab2-a38d-eaaa7d640abf
+		summarizeBy: none
+		sourceColumn: median_rating
+
+	column paid_share
+		dataType: double
+		formatString: 0.0%
+		lineageTag: d6f9c144-c83c-57eb-80e0-157bd103ef96
+		summarizeBy: none
+		sourceColumn: paid_share
+
+	column opportunity
+		dataType: double
+		formatString: 0.00
+		lineageTag: 20eb0919-c31f-5032-b661-ce55d33d3d18
+		summarizeBy: none
+		sourceColumn: opportunity
+
+	column is_highlight
+		dataType: int64
+		formatString: 0
+		lineageTag: 8057c43c-0552-5bd4-afe4-016bf99ff20e
+		summarizeBy: none
+		sourceColumn: is_highlight
+
+	partition fact_category_scores = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(CsvFolder & "fact_category_scores.csv"), [Delimiter=",", Columns=13, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {{"opportunity_rank", Int64.Type}, {"category", type text}, {"category_label", type text}, {"apps", Int64.Type}, {"hit_rate", type number}, {"hit_rate_low", type number}, {"hit_rate_high", type number}, {"median_installs", Int64.Type}, {"top_decile_share", type number}, {"median_rating", type number}, {"paid_share", type number}, {"opportunity", type number}, {"is_highlight", Int64.Type}}, "en-US")
+				in
+				    Typed
+

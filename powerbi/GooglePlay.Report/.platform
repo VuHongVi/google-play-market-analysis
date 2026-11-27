@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "GooglePlay"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "61d00603-22a4-48e3-ad0c-2850bff3c20c"
+  }
+}
