@@ -1,0 +1,743 @@
+{
+  "cleaning": {
+    "raw_rows": 10841,
+    "malformed_rows_dropped": 1,
+    "duplicate_rows_dropped": 1181,
+    "apps": 9659,
+    "missing_rating_share": 0.151465,
+    "snapshot_date": "2018-08-08",
+    "size_varies_share": 0.127135
+  },
+  "overall": {
+    "hit_rate": 0.351796,
+    "median_installs": 100000.0,
+    "top10_share_all": 0.132762,
+    "game_apps": 1720,
+    "games_filed_under_family": 775,
+    "game_hit_rate": 0.529651,
+    "game_paid_share": 0.105814
+  },
+  "categories": [
+    {
+      "category": "EDUCATION",
+      "apps": 106,
+      "hit_rate": 0.5849,
+      "hit_rate_low": 0.4897,
+      "hit_rate_high": 0.6741,
+      "median_installs": 1000000.0,
+      "top_decile_share": 0.5001,
+      "median_rating": 4.4,
+      "paid_share": 0.0189,
+      "opportunity": 1.9394
+    },
+    {
+      "category": "WEATHER",
+      "apps": 79,
+      "hit_rate": 0.5316,
+      "hit_rate_low": 0.4227,
+      "hit_rate_high": 0.6376,
+      "median_installs": 1000000.0,
+      "top_decile_share": 0.6646,
+      "median_rating": 4.3,
+      "paid_share": 0.1013,
+      "opportunity": 1.7879
+    },
+    {
+      "category": "PHOTOGRAPHY",
+      "apps": 281,
+      "hit_rate": 0.6157,
+      "hit_rate_low": 0.5576,
+      "hit_rate_high": 0.6706,
+      "median_installs": 1000000.0,
+      "top_decile_share": 0.7084,
+      "median_rating": 4.3,
+      "paid_share": 0.0676,
+      "opportunity": 1.7273
+    },
+    {
+      "category": "FOOD_AND_DRINK",
+      "apps": 112,
+      "hit_rate": 0.4375,
+      "hit_rate_low": 0.3492,
+      "hit_rate_high": 0.5299,
+      "median_installs": 300000.0,
+      "top_decile_share": 0.5666,
+      "median_rating": 4.3,
+      "paid_share": 0.0179,
+      "opportunity": 1.7273
+    },
+    {
+      "category": "ENTERTAINMENT",
+      "apps": 86,
+      "hit_rate": 0.8372,
+      "hit_rate_low": 0.7451,
+      "hit_rate_high": 0.9005,
+      "median_installs": 1000000.0,
+      "top_decile_share": 0.7109,
+      "median_rating": 4.2,
+      "paid_share": 0.0233,
+      "opportunity": 1.7273
+    },
+    {
+      "category": "SHOPPING",
+      "apps": 202,
+      "hit_rate": 0.5248,
+      "hit_rate_low": 0.4561,
+      "hit_rate_high": 0.5925,
+      "median_installs": 1000000.0,
+      "top_decile_share": 0.6713,
+      "median_rating": 4.3,
+      "paid_share": 0.0099,
+      "opportunity": 1.697
+    },
+    {
+      "category": "GAME",
+      "apps": 945,
+      "hit_rate": 0.5704,
+      "hit_rate_low": 0.5386,
+      "hit_rate_high": 0.6016,
+      "median_installs": 1000000.0,
+      "top_decile_share": 0.7585,
+      "median_rating": 4.3,
+      "paid_share": 0.0868,
+      "opportunity": 1.5455
+    },
+    {
+      "category": "HOUSE_AND_HOME",
+      "apps": 73,
+      "hit_rate": 0.411,
+      "hit_rate_low": 0.3053,
+      "hit_rate_high": 0.5255,
+      "median_installs": 500000.0,
+      "top_decile_share": 0.6687,
+      "median_rating": 4.2,
+      "paid_share": 0.0,
+      "opportunity": 1.5152
+    },
+    {
+      "category": "MAPS_AND_NAVIGATION",
+      "apps": 131,
+      "hit_rate": 0.4122,
+      "hit_rate_low": 0.3316,
+      "hit_rate_high": 0.4978,
+      "median_installs": 100000.0,
+      "top_decile_share": 0.7948,
+      "median_rating": 4.2,
+      "paid_share": 0.0382,
+      "opportunity": 1.2727
+    },
+    {
+      "category": "PARENTING",
+      "apps": 60,
+      "hit_rate": 0.25,
+      "hit_rate_low": 0.1578,
+      "hit_rate_high": 0.3723,
+      "median_installs": 100000.0,
+      "top_decile_share": 0.6028,
+      "median_rating": 4.4,
+      "paid_share": 0.0333,
+      "opportunity": 1.2727
+    },
+    {
+      "category": "SPORTS",
+      "apps": 325,
+      "hit_rate": 0.3631,
+      "hit_rate_low": 0.3127,
+      "hit_rate_high": 0.4167,
+      "median_installs": 100000.0,
+      "top_decile_share": 0.7205,
+      "median_rating": 4.3,
+      "paid_share": 0.0738,
+      "opportunity": 1.2424
+    },
+    {
+      "category": "COMICS",
+      "apps": 56,
+      "hit_rate": 0.2857,
+      "hit_rate_low": 0.1842,
+      "hit_rate_high": 0.4148,
+      "median_installs": 100000.0,
+      "top_decile_share": 0.6892,
+      "median_rating": 4.4,
+      "paid_share": 0.0,
+      "opportunity": 1.2121
+    },
+    {
+      "category": "HEALTH_AND_FITNESS",
+      "apps": 288,
+      "hit_rate": 0.3889,
+      "hit_rate_low": 0.3344,
+      "hit_rate_high": 0.4463,
+      "median_installs": 100000.0,
+      "top_decile_share": 0.7954,
+      "median_rating": 4.5,
+      "paid_share": 0.0521,
+      "opportunity": 1.1515
+    },
+    {
+      "category": "VIDEO_PLAYERS",
+      "apps": 164,
+      "hit_rate": 0.5183,
+      "hit_rate_low": 0.4423,
+      "hit_rate_high": 0.5935,
+      "median_installs": 1000000.0,
+      "top_decile_share": 0.8902,
+      "median_rating": 4.2,
+      "paid_share": 0.0244,
+      "opportunity": 1.1212
+    },
+    {
+      "category": "TRAVEL_AND_LOCAL",
+      "apps": 219,
+      "hit_rate": 0.4247,
+      "hit_rate_low": 0.361,
+      "hit_rate_high": 0.4909,
+      "median_installs": 100000.0,
+      "top_decile_share": 0.9085,
+      "median_rating": 4.2,
+      "paid_share": 0.0548,
+      "opportunity": 0.9394
+    },
+    {
+      "category": "BEAUTY",
+      "apps": 53,
+      "hit_rate": 0.1887,
+      "hit_rate_low": 0.1059,
+      "hit_rate_high": 0.3136,
+      "median_installs": 50000.0,
+      "top_decile_share": 0.6986,
+      "median_rating": 4.3,
+      "paid_share": 0.0,
+      "opportunity": 0.9394
+    },
+    {
+      "category": "FAMILY",
+      "apps": 1877,
+      "hit_rate": 0.3021,
+      "hit_rate_low": 0.2817,
+      "hit_rate_high": 0.3232,
+      "median_installs": 50000.0,
+      "top_decile_share": 0.8466,
+      "median_rating": 4.3,
+      "paid_share": 0.0986,
+      "opportunity": 0.9091
+    },
+    {
+      "category": "AUTO_AND_VEHICLES",
+      "apps": 85,
+      "hit_rate": 0.2118,
+      "hit_rate_low": 0.1384,
+      "hit_rate_high": 0.3101,
+      "median_installs": 100000.0,
+      "top_decile_share": 0.734,
+      "median_rating": 4.3,
+      "paid_share": 0.0353,
+      "opportunity": 0.9091
+    },
+    {
+      "category": "COMMUNICATION",
+      "apps": 315,
+      "hit_rate": 0.4444,
+      "hit_rate_low": 0.3906,
+      "hit_rate_high": 0.4997,
+      "median_installs": 100000.0,
+      "top_decile_share": 0.9376,
+      "median_rating": 4.2,
+      "paid_share": 0.0857,
+      "opportunity": 0.9091
+    },
+    {
+      "category": "FINANCE",
+      "apps": 345,
+      "hit_rate": 0.2696,
+      "hit_rate_low": 0.2255,
+      "hit_rate_high": 0.3187,
+      "median_installs": 10000.0,
+      "top_decile_share": 0.8345,
+      "median_rating": 4.3,
+      "paid_share": 0.0493,
+      "opportunity": 0.8485
+    },
+    {
+      "category": "PERSONALIZATION",
+      "apps": 376,
+      "hit_rate": 0.2926,
+      "hit_rate_low": 0.2489,
+      "hit_rate_high": 0.3405,
+      "median_installs": 10000.0,
+      "top_decile_share": 0.8483,
+      "median_rating": 4.4,
+      "paid_share": 0.2154,
+      "opportunity": 0.8485
+    },
+    {
+      "category": "SOCIAL",
+      "apps": 239,
+      "hit_rate": 0.4184,
+      "hit_rate_low": 0.3576,
+      "hit_rate_high": 0.4818,
+      "median_installs": 100000.0,
+      "top_decile_share": 0.9311,
+      "median_rating": 4.3,
+      "paid_share": 0.0126,
+      "opportunity": 0.8485
+    },
+    {
+      "category": "PRODUCTIVITY",
+      "apps": 374,
+      "hit_rate": 0.393,
+      "hit_rate_low": 0.3449,
+      "hit_rate_high": 0.4434,
+      "median_installs": 100000.0,
+      "top_decile_share": 0.9149,
+      "median_rating": 4.3,
+      "paid_share": 0.0749,
+      "opportunity": 0.7879
+    },
+    {
+      "category": "TOOLS",
+      "apps": 829,
+      "hit_rate": 0.3317,
+      "hit_rate_low": 0.3005,
+      "hit_rate_high": 0.3645,
+      "median_installs": 50000.0,
+      "top_decile_share": 0.896,
+      "median_rating": 4.2,
+      "paid_share": 0.0941,
+      "opportunity": 0.7879
+    },
+    {
+      "category": "DATING",
+      "apps": 170,
+      "hit_rate": 0.1941,
+      "hit_rate_low": 0.1417,
+      "hit_rate_high": 0.2601,
+      "median_installs": 10000.0,
+      "top_decile_share": 0.8018,
+      "median_rating": 4.1,
+      "paid_share": 0.0294,
+      "opportunity": 0.7273
+    },
+    {
+      "category": "LIFESTYLE",
+      "apps": 369,
+      "hit_rate": 0.2276,
+      "hit_rate_low": 0.1878,
+      "hit_rate_high": 0.2731,
+      "median_installs": 10000.0,
+      "top_decile_share": 0.8535,
+      "median_rating": 4.2,
+      "paid_share": 0.0515,
+      "opportunity": 0.6667
+    },
+    {
+      "category": "LIBRARIES_AND_DEMO",
+      "apps": 84,
+      "hit_rate": 0.1548,
+      "hit_rate_low": 0.0927,
+      "hit_rate_high": 0.247,
+      "median_installs": 10000.0,
+      "top_decile_share": 0.8303,
+      "median_rating": 4.2,
+      "paid_share": 0.0119,
+      "opportunity": 0.6061
+    },
+    {
+      "category": "ART_AND_DESIGN",
+      "apps": 61,
+      "hit_rate": 0.1967,
+      "hit_rate_low": 0.1163,
+      "hit_rate_high": 0.3131,
+      "median_installs": 100000.0,
+      "top_decile_share": 0.8831,
+      "median_rating": 4.4,
+      "paid_share": 0.0492,
+      "opportunity": 0.5455
+    },
+    {
+      "category": "NEWS_AND_MAGAZINES",
+      "apps": 254,
+      "hit_rate": 0.3307,
+      "hit_rate_low": 0.2757,
+      "hit_rate_high": 0.3907,
+      "median_installs": 50000.0,
+      "top_decile_share": 0.9539,
+      "median_rating": 4.2,
+      "paid_share": 0.0079,
+      "opportunity": 0.5152
+    },
+    {
+      "category": "BOOKS_AND_REFERENCE",
+      "apps": 222,
+      "hit_rate": 0.2387,
+      "hit_rate_low": 0.1874,
+      "hit_rate_high": 0.299,
+      "median_installs": 10000.0,
+      "top_decile_share": 0.9484,
+      "median_rating": 4.5,
+      "paid_share": 0.1261,
+      "opportunity": 0.3939
+    },
+    {
+      "category": "MEDICAL",
+      "apps": 395,
+      "hit_rate": 0.0456,
+      "hit_rate_low": 0.029,
+      "hit_rate_high": 0.0709,
+      "median_installs": 1000.0,
+      "top_decile_share": 0.8618,
+      "median_rating": 4.3,
+      "paid_share": 0.2076,
+      "opportunity": 0.3939
+    },
+    {
+      "category": "EVENTS",
+      "apps": 64,
+      "hit_rate": 0.0938,
+      "hit_rate_low": 0.0437,
+      "hit_rate_high": 0.1898,
+      "median_installs": 1000.0,
+      "top_decile_share": 0.9078,
+      "median_rating": 4.5,
+      "paid_share": 0.0156,
+      "opportunity": 0.303
+    },
+    {
+      "category": "BUSINESS",
+      "apps": 420,
+      "hit_rate": 0.1643,
+      "hit_rate_low": 0.1319,
+      "hit_rate_high": 0.2027,
+      "median_installs": 1000.0,
+      "top_decile_share": 0.9496,
+      "median_rating": 4.2,
+      "paid_share": 0.0286,
+      "opportunity": 0.1818
+    }
+  ],
+  "game_genres": [
+    {
+      "primary_genre": "Racing",
+      "apps": 108,
+      "hit_rate": 0.6944,
+      "hit_rate_low": 0.6021,
+      "hit_rate_high": 0.7734,
+      "median_installs": 1000000.0,
+      "top_decile_share": 0.5869,
+      "median_rating": 4.2,
+      "paid_share": 0.037,
+      "opportunity": 1.8462
+    },
+    {
+      "primary_genre": "Role Playing",
+      "apps": 115,
+      "hit_rate": 0.5304,
+      "hit_rate_low": 0.4397,
+      "hit_rate_high": 0.6192,
+      "median_installs": 1000000.0,
+      "top_decile_share": 0.5216,
+      "median_rating": 4.3,
+      "paid_share": 0.2087,
+      "opportunity": 1.6154
+    },
+    {
+      "primary_genre": "Strategy",
+      "apps": 99,
+      "hit_rate": 0.6061,
+      "hit_rate_low": 0.5076,
+      "hit_rate_high": 0.6966,
+      "median_installs": 1000000.0,
+      "top_decile_share": 0.709,
+      "median_rating": 4.3,
+      "paid_share": 0.1414,
+      "opportunity": 1.4615
+    },
+    {
+      "primary_genre": "Action",
+      "apps": 311,
+      "hit_rate": 0.6077,
+      "hit_rate_low": 0.5525,
+      "hit_rate_high": 0.6604,
+      "median_installs": 1000000.0,
+      "top_decile_share": 0.7409,
+      "median_rating": 4.3,
+      "paid_share": 0.0868,
+      "opportunity": 1.3846
+    },
+    {
+      "primary_genre": "Simulation",
+      "apps": 206,
+      "hit_rate": 0.4903,
+      "hit_rate_low": 0.4228,
+      "hit_rate_high": 0.5581,
+      "median_installs": 500000.0,
+      "top_decile_share": 0.6163,
+      "median_rating": 4.2,
+      "paid_share": 0.0583,
+      "opportunity": 1.2308
+    },
+    {
+      "primary_genre": "Casino",
+      "apps": 39,
+      "hit_rate": 0.4103,
+      "hit_rate_low": 0.2708,
+      "hit_rate_high": 0.5658,
+      "median_installs": 500000.0,
+      "top_decile_share": 0.6142,
+      "median_rating": 4.4,
+      "paid_share": 0.0256,
+      "opportunity": 1.1538
+    },
+    {
+      "primary_genre": "Arcade",
+      "apps": 199,
+      "hit_rate": 0.593,
+      "hit_rate_low": 0.5236,
+      "hit_rate_high": 0.6588,
+      "median_installs": 1000000.0,
+      "top_decile_share": 0.7629,
+      "median_rating": 4.3,
+      "paid_share": 0.1156,
+      "opportunity": 1.1538
+    },
+    {
+      "primary_genre": "Card",
+      "apps": 49,
+      "hit_rate": 0.3878,
+      "hit_rate_low": 0.2643,
+      "hit_rate_high": 0.5275,
+      "median_installs": 100000.0,
+      "top_decile_share": 0.5494,
+      "median_rating": 4.25,
+      "paid_share": 0.1633,
+      "opportunity": 1.1538
+    },
+    {
+      "primary_genre": "Adventure",
+      "apps": 80,
+      "hit_rate": 0.4,
+      "hit_rate_low": 0.2996,
+      "hit_rate_high": 0.5095,
+      "median_installs": 100000.0,
+      "top_decile_share": 0.7265,
+      "median_rating": 4.3,
+      "paid_share": 0.1875,
+      "opportunity": 0.8462
+    },
+    {
+      "primary_genre": "Casual",
+      "apps": 225,
+      "hit_rate": 0.5422,
+      "hit_rate_low": 0.477,
+      "hit_rate_high": 0.6061,
+      "median_installs": 1000000.0,
+      "top_decile_share": 0.8404,
+      "median_rating": 4.2,
+      "paid_share": 0.0667,
+      "opportunity": 0.8462
+    },
+    {
+      "primary_genre": "Puzzle",
+      "apps": 142,
+      "hit_rate": 0.4437,
+      "hit_rate_low": 0.3645,
+      "hit_rate_high": 0.5258,
+      "median_installs": 500000.0,
+      "top_decile_share": 0.7674,
+      "median_rating": 4.4,
+      "paid_share": 0.1479,
+      "opportunity": 0.7692
+    },
+    {
+      "primary_genre": "Board",
+      "apps": 60,
+      "hit_rate": 0.3167,
+      "hit_rate_low": 0.2131,
+      "hit_rate_high": 0.4423,
+      "median_installs": 75000.0,
+      "top_decile_share": 0.7899,
+      "median_rating": 4.3,
+      "paid_share": 0.2833,
+      "opportunity": 0.3846
+    },
+    {
+      "primary_genre": "Trivia",
+      "apps": 39,
+      "hit_rate": 0.1538,
+      "hit_rate_low": 0.0725,
+      "hit_rate_high": 0.2973,
+      "median_installs": 10000.0,
+      "top_decile_share": 0.972,
+      "median_rating": 4.25,
+      "paid_share": 0.0,
+      "opportunity": 0.1538
+    }
+  ],
+  "drivers": {
+    "rating_installs_spearman": 0.027184,
+    "hit_rate_by_rating_band": {
+      "<=3.5": {
+        "apps": 484,
+        "hit_rate": 0.252066
+      },
+      "3.6-4.0": {
+        "apps": 1203,
+        "hit_rate": 0.466334
+      },
+      "4.1-4.3": {
+        "apps": 2025,
+        "hit_rate": 0.603951
+      },
+      "4.4-4.6": {
+        "apps": 2077,
+        "hit_rate": 0.617236
+      },
+      "4.7-5.0": {
+        "apps": 512,
+        "hit_rate": 0.404297
+      }
+    },
+    "free_vs_paid": {
+      "free_apps": 8905,
+      "paid_apps": 754,
+      "free_hit_rate": 0.379113,
+      "paid_hit_rate": 0.029178,
+      "free_median_installs": 100000.0,
+      "paid_median_installs": 1000.0,
+      "mannwhitney_p": 0.0,
+      "free_median_rating": 4.3,
+      "paid_median_rating": 4.4,
+      "paid_median_price": 2.99,
+      "paid_share_under_5usd": 0.790451
+    },
+    "hit_rate_by_update_age": {
+      "<=30d": {
+        "apps": 2936,
+        "hit_rate": 0.567439
+      },
+      "31-180d": {
+        "apps": 2987,
+        "hit_rate": 0.329428
+      },
+      "181-365d": {
+        "apps": 1320,
+        "hit_rate": 0.228788
+      },
+      ">1y": {
+        "apps": 2416,
+        "hit_rate": 0.184603
+      }
+    },
+    "size_installs_spearman": 0.31015
+  },
+  "sentiment": {
+    "labelled_reviews": 37432,
+    "apps_with_20plus_reviews": 677,
+    "neg_share_vs_rating_spearman": -0.228758,
+    "median_neg_share_by_category": {
+      "GAME": {
+        "apps": 69,
+        "neg_share": 0.351515
+      },
+      "FAMILY": {
+        "apps": 61,
+        "neg_share": 0.285714
+      },
+      "ENTERTAINMENT": {
+        "apps": 18,
+        "neg_share": 0.261364
+      },
+      "FINANCE": {
+        "apps": 36,
+        "neg_share": 0.220486
+      },
+      "NEWS_AND_MAGAZINES": {
+        "apps": 19,
+        "neg_share": 0.212121
+      },
+      "SOCIAL": {
+        "apps": 16,
+        "neg_share": 0.208333
+      },
+      "COMMUNICATION": {
+        "apps": 21,
+        "neg_share": 0.2
+      },
+      "DATING": {
+        "apps": 30,
+        "neg_share": 0.196314
+      },
+      "PHOTOGRAPHY": {
+        "apps": 20,
+        "neg_share": 0.189833
+      },
+      "TRAVEL_AND_LOCAL": {
+        "apps": 35,
+        "neg_share": 0.179487
+      },
+      "PRODUCTIVITY": {
+        "apps": 27,
+        "neg_share": 0.17284
+      },
+      "SPORTS": {
+        "apps": 28,
+        "neg_share": 0.164966
+      },
+      "SHOPPING": {
+        "apps": 18,
+        "neg_share": 0.151923
+      },
+      "BUSINESS": {
+        "apps": 17,
+        "neg_share": 0.142857
+      },
+      "LIFESTYLE": {
+        "apps": 20,
+        "neg_share": 0.138889
+      },
+      "PERSONALIZATION": {
+        "apps": 27,
+        "neg_share": 0.129032
+      },
+      "MEDICAL": {
+        "apps": 30,
+        "neg_share": 0.128289
+      },
+      "FOOD_AND_DRINK": {
+        "apps": 15,
+        "neg_share": 0.125
+      },
+      "TOOLS": {
+        "apps": 34,
+        "neg_share": 0.118056
+      },
+      "HEALTH_AND_FITNESS": {
+        "apps": 31,
+        "neg_share": 0.102564
+      }
+    }
+  },
+  "params": {
+    "hit_threshold": 1000000,
+    "min_apps": 50,
+    "min_genre_apps": 30,
+    "top_n": 10,
+    "top_share": 0.1,
+    "game_genres": [
+      "Action",
+      "Adventure",
+      "Arcade",
+      "Board",
+      "Card",
+      "Casino",
+      "Casual",
+      "Puzzle",
+      "Racing",
+      "Role Playing",
+      "Simulation",
+      "Strategy",
+      "Trivia",
+      "Word"
+    ]
+  }
+}
