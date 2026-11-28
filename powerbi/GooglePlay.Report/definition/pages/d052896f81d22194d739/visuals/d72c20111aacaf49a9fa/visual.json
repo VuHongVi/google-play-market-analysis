@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "fact_apps.category_label",
-              "nativeQueryRef": "category_label"
+              "nativeQueryRef": "category_label",
+              "active": true
             }
           ]
         }

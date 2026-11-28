@@ -27,25 +27,8 @@
                 }
               },
               "queryRef": "fact_apps.pricing",
-              "nativeQueryRef": "pricing"
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "Hit Rate"
-                }
-              },
-              "queryRef": "_Measures.Hit Rate",
-              "nativeQueryRef": "Hit Rate"
+              "nativeQueryRef": "pricing",
+              "active": true
             }
           ]
         },
@@ -66,6 +49,24 @@
               "nativeQueryRef": "Apps"
             }
           ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Hit Rate"
+                }
+              },
+              "queryRef": "_Measures.Hit Rate",
+              "nativeQueryRef": "Hit Rate"
+            }
+          ]
         }
       },
       "sortDefinition": {
@@ -83,8 +84,7 @@
             },
             "direction": "Ascending"
           }
-        ],
-        "isDefaultSort": false
+        ]
       }
     },
     "objects": {

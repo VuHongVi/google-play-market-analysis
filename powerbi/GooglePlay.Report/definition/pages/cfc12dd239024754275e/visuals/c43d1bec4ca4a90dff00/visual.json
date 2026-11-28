@@ -28,55 +28,8 @@
               },
               "queryRef": "fact_category_scores.category_label",
               "nativeQueryRef": "category_label",
+              "active": true,
               "displayName": "Segment"
-            }
-          ]
-        },
-        "X": {
-          "projections": [
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "fact_category_scores"
-                        }
-                      },
-                      "Property": "top_decile_share"
-                    }
-                  },
-                  "Function": 0
-                }
-              },
-              "queryRef": "Sum(fact_category_scores.top_decile_share)",
-              "nativeQueryRef": "Sum of top_decile_share",
-              "displayName": "Installs taken by the top 10% of apps"
-            }
-          ]
-        },
-        "Y": {
-          "projections": [
-            {
-              "field": {
-                "Aggregation": {
-                  "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "fact_category_scores"
-                        }
-                      },
-                      "Property": "hit_rate"
-                    }
-                  },
-                  "Function": 0
-                }
-              },
-              "queryRef": "Sum(fact_category_scores.hit_rate)",
-              "nativeQueryRef": "Sum of hit_rate",
-              "displayName": "Share of apps with 1M+ installs"
             }
           ]
         },
@@ -165,6 +118,55 @@
               "queryRef": "Min(fact_category_scores.opportunity_rank)",
               "nativeQueryRef": "Min of opportunity_rank",
               "displayName": "Opportunity rank"
+            }
+          ]
+        },
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fact_category_scores"
+                        }
+                      },
+                      "Property": "top_decile_share"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(fact_category_scores.top_decile_share)",
+              "nativeQueryRef": "Sum of top_decile_share",
+              "active": true,
+              "displayName": "Installs taken by the top 10% of apps"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "fact_category_scores"
+                        }
+                      },
+                      "Property": "hit_rate"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(fact_category_scores.hit_rate)",
+              "nativeQueryRef": "Sum of hit_rate",
+              "displayName": "Share of apps with 1M+ installs"
             }
           ]
         }

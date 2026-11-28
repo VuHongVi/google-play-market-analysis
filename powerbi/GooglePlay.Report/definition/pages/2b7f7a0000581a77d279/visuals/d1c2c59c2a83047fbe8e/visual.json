@@ -27,7 +27,8 @@
                 }
               },
               "queryRef": "fact_category_sentiment.category_label",
-              "nativeQueryRef": "category_label"
+              "nativeQueryRef": "category_label",
+              "active": true
             }
           ]
         },
@@ -65,8 +66,7 @@
             },
             "direction": "Descending"
           }
-        ],
-        "isDefaultSort": false
+        ]
       }
     },
     "objects": {
