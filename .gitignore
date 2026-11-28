@@ -4,11 +4,7 @@ __pycache__/
 *.egg-info/
 .venv/
 .env
-data/raw/
 
 # Power BI Desktop local state (per-user, not source)
 **/.pbi/localSettings.json
 **/.pbi/cache.abf
-# row-level tables are rebuilt by the powerbi_export step (raw data is not committed)
-powerbi/data/fact_players.csv
-powerbi/data/fact_apps.csv

@@ -42,7 +42,7 @@ in DAX from the 9,659 app rows), and sentiment plus limitations. A reconciliatio
 
 | Step | Result |
 |---|---|
-| Source | Kaggle [`lava18/google-play-store-apps`](https://www.kaggle.com/datasets/lava18/google-play-store-apps) (Creative Commons, see `data/raw/license.txt` after download) |
+| Source | Kaggle [`lava18/google-play-store-apps`](https://www.kaggle.com/datasets/lava18/google-play-store-apps) (CC BY 3.0, see [`data/raw/license.txt`](data/raw/license.txt)); a copy of the raw files is kept in [`data/raw/`](data/raw/) for reproducibility |
 | Raw rows | 10,841 |
 | Malformed row (every field shifted one column) | 1 dropped |
 | Duplicate listings of the same app | 1,181 dropped, keeping the row with the most reviews (latest scrape) |
@@ -164,8 +164,8 @@ engaged enough to complain: support, balancing and bug-fix cadence matter more i
 ```powershell
 pip install -r requirements.txt
 pip install -e .
-$env:KAGGLE_API_TOKEN = "<your token>"   # or ~/.kaggle/kaggle.json
-kaggle datasets download -d lava18/google-play-store-apps -p data/raw --unzip
+# data/raw/ is in the repo; to fetch a fresh copy instead:
+#   kaggle datasets download -d lava18/google-play-store-apps -p data/raw --unzip
 python -m gplay       # writes results/, figures/, README.md
 pytest -q
 # Power BI (optional)
